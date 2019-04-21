@@ -16,11 +16,16 @@ class FeedPresenter: FeedViewOutput {
     }
     
     func viewDidLoad() {
+        fetchArticles()
+    }
+    
+    func fetchArticles() {
         interactor?.fetchArticles()
     }
     
     func showArticle(at index: Int) {
-        router?.presentArticleView(with: articles[index].contentURL, fromView: view!)
+        let article = articles[index]
+        router?.presentArticleView(with: article.contentURL, imageURLString: article.imageMedium, fromView: view!)
     }
 }
 

@@ -16,8 +16,10 @@ class FeedTableViewCell: UITableViewCell {
     
     func fill(_ model: PONSOArticle) {
         self.titleLabel?.text = model.title
-        if let imageURL = URL(string: model.imageMedium), let imageData = try? Data(contentsOf: imageURL) {
-            self.thumbImageView?.image = UIImage(data: imageData)
+        if let imageURL = URL(string: model.imageThumb) {
+            UIImage.load(from: imageURL) { (image) in
+                self.thumbImageView.image = image
+            }
         }
     }
 

@@ -19,6 +19,8 @@ class FeedView: UITableViewController, FeedViewInput {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
         setupFetchResultsController()
         presenter?.viewDidLoad()
     }
@@ -32,6 +34,7 @@ class FeedView: UITableViewController, FeedViewInput {
         } catch {
             print(error)
         }
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source and delegate
@@ -42,7 +45,7 @@ class FeedView: UITableViewController, FeedViewInput {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell", for: indexPath) as! FeedTableViewCell
-        let article = fetchResultsController?.fetchedObjects?[indexPath.row].getPONSO()
+        let article = fetchResultsController?.object(at: indexPath).getPONSO()
         article.map(cell.fill)
         
         return cell
@@ -71,6 +74,10 @@ class FeedView: UITableViewController, FeedViewInput {
         fetchResultsController?.delegate = self
     }
 
+    @objc private func onRefresh() {
+        self.refreshControl?.beginRefreshing()
+        presenter?.fetchArticles()
+    }
 }
 
 extension FeedView: NSFetchedResultsControllerDelegate {

@@ -10,5 +10,5 @@ import UIKit
 
 protocol FeedRouterInput: class {
     static func createFeedModule() -> UIViewController
-    func presentArticleView(with urlString: String, fromView: FeedViewInput)
+    func presentArticleView(with urlString: String, imageURLString: String, fromView: FeedViewInput)
 }

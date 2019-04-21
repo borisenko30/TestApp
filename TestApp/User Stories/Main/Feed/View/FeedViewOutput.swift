@@ -14,5 +14,6 @@ protocol FeedViewOutput: class {
     var articles: [PONSOArticle] { get }
     
     func viewDidLoad()
+    func fetchArticles()
     func showArticle(at index: Int)
 }

@@ -36,9 +36,40 @@ class ArticleView: UIViewController, ArticleViewInput {
                                        target: self,
                                        action: #selector(onBack))
         self.navigationItem.leftBarButtonItem = backItem
+        
+        let shareItem = UIBarButtonItem(title: "Share",
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(onShare))
+        self.navigationItem.rightBarButtonItem = shareItem
+
+    }
+    
+    private func showShareView(for item: Any) {
+        let controller = UIActivityViewController(activityItems: [item], applicationActivities: nil)
+        present(controller, animated: true)
     }
     
     @objc private func onBack() {
         presenter?.dismissArticleView()
+    }
+    
+    @objc private func onShare() {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let shareLinkAction = UIAlertAction(title: "Share link", style: .default) { (action) in
+            if let urlString = self.presenter?.articleURLString, let url = URL(string: urlString) {
+                self.showShareView(for: url)
+            }
+        }
+        
+        let shareImageAction = UIAlertAction(title: "Share image", style: .default) { (action) in
+            if let imageURLString = self.presenter?.imageURLString, let imageURL = URL(string: imageURLString) {
+                UIImage.load(from: imageURL) { (image) in
+                    self.showShareView(for: image)
+                }
+            }
+        }
+        
+        showActionSheet(for: [shareLinkAction, shareImageAction, cancelAction])
     }
 }

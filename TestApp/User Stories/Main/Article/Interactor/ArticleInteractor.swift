@@ -9,4 +9,5 @@
 class ArticleInteractor: ArticleInteractorInput {
     weak var presenter: ArticleInteractorOutput?
     var articleURLString: String?
+    var imageURLString: String?
 }

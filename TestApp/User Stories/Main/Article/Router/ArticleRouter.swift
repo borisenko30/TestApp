@@ -13,7 +13,7 @@ class ArticleRouter: ArticleRouterInput {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
-    class func createArticleModule(with urlString: String) -> UIViewController {
+    class func createArticleModule(with urlString: String, imageURLString: String) -> UIViewController {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "ArticleNavigationController")
         
         if let view = navigationController.children.first as? ArticleViewInput {
@@ -27,6 +27,7 @@ class ArticleRouter: ArticleRouterInput {
             presenter.view = view
             interactor.presenter = presenter
             interactor.articleURLString = urlString
+            interactor.imageURLString = imageURLString
             
             return navigationController
         }

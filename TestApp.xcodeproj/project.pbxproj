@@ -45,6 +45,8 @@
 		FAD473EE226C7311002328F1 /* ArticleInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473ED226C7311002328F1 /* ArticleInteractorOutput.swift */; };
 		FAD473F0226C731D002328F1 /* ArticleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473EF226C731D002328F1 /* ArticleRouter.swift */; };
 		FAD473F2226C732D002328F1 /* ArticleRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473F1226C732D002328F1 /* ArticleRouterInput.swift */; };
+		FAD47402226CE68E002328F1 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */; };
+		FAD47404226CF72E002328F1 /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		FAD473ED226C7311002328F1 /* ArticleInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInteractorOutput.swift; sourceTree = "<group>"; };
 		FAD473EF226C731D002328F1 /* ArticleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouter.swift; sourceTree = "<group>"; };
 		FAD473F1226C732D002328F1 /* ArticleRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouterInput.swift; sourceTree = "<group>"; };
+		FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 		FAD47398226B832B002328F1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */,
+				FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,7 +172,7 @@
 		FAD47399226B8336002328F1 /* Core Components */ = {
 			isa = PBXGroup;
 			children = (
-				FAD4739B226B8352002328F1 /* Network Service */,
+				FAD4739B226B8352002328F1 /* Network Services */,
 				FAD4739A226B834B002328F1 /* Core Data */,
 			);
 			path = "Core Components";
@@ -180,12 +186,12 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
-		FAD4739B226B8352002328F1 /* Network Service */ = {
+		FAD4739B226B8352002328F1 /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
 				FAD473BC226B9BD4002328F1 /* HTTPService.swift */,
 			);
-			path = "Network Service";
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 		FAD4739C226B8371002328F1 /* Article */ = {
@@ -437,6 +443,7 @@
 				FAD473BB226B9322002328F1 /* Article+CoreDataProperties.swift in Sources */,
 				FAD473BF226B9E54002328F1 /* AppConstants.swift in Sources */,
 				FAD473B7226B90C0002328F1 /* PONSOArticle.swift in Sources */,
+				FAD47402226CE68E002328F1 /* UIViewController + Extensions.swift in Sources */,
 				FAD473CC226BB5B4002328F1 /* FeedRouter.swift in Sources */,
 				FAD473EE226C7311002328F1 /* ArticleInteractorOutput.swift in Sources */,
 				FAD473E2226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift in Sources */,
@@ -460,6 +467,7 @@
 				FAD473E4226C71D9002328F1 /* ArticleViewInput.swift in Sources */,
 				FAD473BA226B9322002328F1 /* Article+CoreDataClass.swift in Sources */,
 				FAD47382226B7FAD002328F1 /* AppDelegate.swift in Sources */,
+				FAD47404226CF72E002328F1 /* UIImage + Extensions.swift in Sources */,
 				FAD473CA226BB548002328F1 /* FeedRemoteDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

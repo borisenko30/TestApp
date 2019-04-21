@@ -9,4 +9,5 @@
 protocol ArticleInteractorInput: class {
     var presenter: ArticleInteractorOutput? { get set }
     var articleURLString: String? { get set }
+    var imageURLString: String? { get set }
 }

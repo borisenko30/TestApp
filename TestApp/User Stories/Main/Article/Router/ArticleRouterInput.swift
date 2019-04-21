@@ -9,6 +9,6 @@
 import UIKit
 
 protocol ArticleRouterInput: class {
-    static func createArticleModule(with urlString: String) -> UIViewController
+    static func createArticleModule(with urlString: String, imageURLString: String) -> UIViewController
     func dismiss(_ view: ArticleViewInput)
 }
