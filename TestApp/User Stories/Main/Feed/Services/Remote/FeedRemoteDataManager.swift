@@ -15,7 +15,9 @@ class FeedRemoteDataManager: FeedRemoteDataManagerInput {
         if let url = URL(string: AppConstants.apiURL + AppConstants.apiArticles) {
             HTTPService.shared.request(url: url, onSuccess: { (data) in
                 if let articles = try? JSONDecoder().decode([PONSOArticle].self, from: data) {
-                    self.requestHandler?.didFetchArticles(articles)
+                    DispatchQueue.main.async {
+                        self.requestHandler?.didFetchArticles(articles)
+                    }
                 } else {
                     print("Error: data is corrupted")
                 }

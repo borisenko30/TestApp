@@ -9,12 +9,16 @@
 import UIKit
 
 class FeedTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbImageView: UIImageView!
+    
     // MARK: - Public
     
-    func fill() {
-        self.textLabel?.text = "it's alive"
-        self.imageView?.image = nil
+    func fill(_ model: PONSOArticle) {
+        self.titleLabel?.text = model.title
+        if let imageURL = URL(string: model.imageMedium), let imageData = try? Data(contentsOf: imageURL) {
+            self.thumbImageView?.image = UIImage(data: imageData)
+        }
     }
 
 }

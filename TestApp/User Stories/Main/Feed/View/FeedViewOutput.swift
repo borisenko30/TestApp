@@ -11,5 +11,8 @@ protocol FeedViewOutput: class {
     var interactor: FeedInteractorInput? { get set }
     var router: FeedRouterInput? { get set }
     
+    var articles: [PONSOArticle] { get }
+    
     func viewDidLoad()
+    func showArticle(at index: Int)
 }

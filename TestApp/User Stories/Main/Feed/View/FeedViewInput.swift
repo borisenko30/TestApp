@@ -8,4 +8,6 @@
 
 protocol FeedViewInput: class {
     var presenter: FeedViewOutput? { get set }
+    
+    func updateFeed()
 }

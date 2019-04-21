@@ -9,24 +9,36 @@
 import UIKit
 import WebKit
 
-class ArticleView: UIViewController {
+class ArticleView: UIViewController, ArticleViewInput {
     @IBOutlet weak var webView: WKWebView!
+    
+    var presenter: ArticleViewOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        presenter?.viewDidLoad()
+        setupNavBar()
+    }
+
+    // MARK: - Public
+    
+    func showArticle(_ urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        webView.load(URLRequest(url: url))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private
+    
+    private func setupNavBar() {
+        let backItem = UIBarButtonItem(title: "Back",
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(onBack))
+        self.navigationItem.leftBarButtonItem = backItem
     }
-    */
-
+    
+    @objc private func onBack() {
+        presenter?.dismissArticleView()
+    }
 }

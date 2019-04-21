@@ -11,7 +11,9 @@ import Foundation
 class FeedInteractor: FeedInteractorInput {
     var remoteDataManager: FeedRemoteDataManagerInput?
     var localDataManager: FeedLocalDataManagerInput?
-    weak var presenter: FeedViewOutput?
+    weak var presenter: (FeedViewOutput & FeedInteractorOutput)?
+    
+    private(set) var articles = [PONSOArticle]()
     
     func fetchArticles() {
         remoteDataManager?.fetchArticles()
@@ -20,6 +22,8 @@ class FeedInteractor: FeedInteractorInput {
 
 extension FeedInteractor: FeedRemoteDataManagerOutput {
     func didFetchArticles(_ articles: [PONSOArticle]) {
-        localDataManager?.saveArticles(articles)
+        self.articles = articles
+        presenter?.updateFeed()
+//        localDataManager?.saveArticles(articles)
     }
 }

@@ -38,4 +38,9 @@ class FeedRouter: FeedRouterInput {
         
         return UIViewController()
     }
+    
+    func presentArticleView(with urlString: String, fromView: FeedViewInput) {
+        let articleView = ArticleRouter.createArticleModule(with: urlString)
+        (fromView as! UIViewController).present(articleView, animated: true, completion: nil)
+    }
 }

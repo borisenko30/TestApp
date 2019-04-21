@@ -7,5 +7,5 @@
 //
 
 protocol FeedInteractorOutput: class {
-
+    func updateFeed()
 }

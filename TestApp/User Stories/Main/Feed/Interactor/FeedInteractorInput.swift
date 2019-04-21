@@ -9,7 +9,9 @@
 protocol FeedInteractorInput: class {
     var remoteDataManager: FeedRemoteDataManagerInput? { get set }
     var localDataManager: FeedLocalDataManagerInput? { get set }
-    var presenter: FeedViewOutput? { get set }
+    var presenter: (FeedViewOutput & FeedInteractorOutput)? { get set }
+    
+    var articles: [PONSOArticle] { get }
     
     func fetchArticles()
 }
