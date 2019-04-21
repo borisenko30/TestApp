@@ -8,4 +8,5 @@
 
 protocol FeedRemoteDataManagerOutput: class {
     func didFetchArticles(_ articles: [PONSOArticle])
+    func fetchArticlesDidFail(reason: String)
 }

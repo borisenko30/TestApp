@@ -25,7 +25,12 @@ class FeedPresenter: FeedViewOutput {
 }
 
 extension FeedPresenter: FeedInteractorOutput {
-    func updateFeed() {
+    func didFetchArticles() {
+        view?.updateFeed()
+    }
+    
+    func fetchArticlesDidFail(reason: String) {
+        print("Error: \(reason)")
         view?.updateFeed()
     }
 }

@@ -23,7 +23,12 @@ class FeedInteractor: FeedInteractorInput {
 extension FeedInteractor: FeedRemoteDataManagerOutput {
     func didFetchArticles(_ articles: [PONSOArticle]) {
         self.articles = articles
-        presenter?.updateFeed()
-//        localDataManager?.saveArticles(articles)
+        localDataManager?.clearArticles()
+        localDataManager?.saveArticles(articles)
+        presenter?.didFetchArticles()
+    }
+    
+    func fetchArticlesDidFail(reason: String) {
+        presenter?.fetchArticlesDidFail(reason: reason)
     }
 }

@@ -19,10 +19,14 @@ class FeedRemoteDataManager: FeedRemoteDataManagerInput {
                         self.requestHandler?.didFetchArticles(articles)
                     }
                 } else {
-                    print("Error: data is corrupted")
+                    DispatchQueue.main.async {
+                        self.requestHandler?.fetchArticlesDidFail(reason: "Error: data is corrupted")
+                    }
                 }
             }) { (error) in
-                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.requestHandler?.fetchArticlesDidFail(reason: error.localizedDescription)
+                }
             }
         }
     }

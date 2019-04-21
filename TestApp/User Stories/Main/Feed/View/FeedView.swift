@@ -7,45 +7,116 @@
 //
 
 import UIKit
+import CoreData
 
 class FeedView: UITableViewController, FeedViewInput {
     var presenter: FeedViewOutput?
+    var fetchResultsController: NSFetchedResultsController<Article>?
 
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.viewDidLoad()
         tableView.tableFooterView = UIView()
+        setupFetchResultsController()
+        presenter?.viewDidLoad()
     }
     
     // MARK: - Public
     
     func updateFeed() {
-        tableView.reloadData()
+        do {
+            try fetchResultsController?.performFetch()
+            tableView.reloadData()
+        } catch {
+            print(error)
+        }
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view data source and delegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.articles.count ?? 0
+        return fetchResultsController?.fetchedObjects?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell", for: indexPath) as! FeedTableViewCell
-        (presenter?.articles[indexPath.row]).map(cell.fill)
+        let article = fetchResultsController?.fetchedObjects?[indexPath.row].getPONSO()
+        article.map(cell.fill)
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UIDevice.current.userInterfaceIdiom == .pad ? 100 : 60
     }
  
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.showArticle(at: indexPath.row)
     }
+    
+    // MARK: - Private
+    
+    private func setupFetchResultsController() {
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        let context = CoreDataStack.shared.persistentContainer.viewContext
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchResultsController = NSFetchedResultsController<Article>(fetchRequest: fetchRequest,
+                                                                     managedObjectContext: context,
+                                                                     sectionNameKeyPath: nil,
+                                                                     cacheName: "feedCache")
+        fetchResultsController?.delegate = self
+    }
 
+}
+
+extension FeedView: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+        default:
+            return
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .update:
+            if let cell = tableView.cellForRow(at: indexPath!) as? FeedTableViewCell {
+                cell.fill((anObject as! Article).getPONSO())
+            }
+        case .move:
+            if let cell = tableView.cellForRow(at: indexPath!) as? FeedTableViewCell {
+                cell.fill((anObject as! Article).getPONSO())
+            }
+            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        @unknown default:
+            fatalError("unknown NSFetchedResultsChangeType")
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
 }

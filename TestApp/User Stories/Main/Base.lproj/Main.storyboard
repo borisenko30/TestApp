@@ -53,6 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MasterTableViewCell" rowHeight="60" id="fPO-n8-alc" customClass="FeedTableViewCell" customModule="TestApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="60"/>
@@ -61,8 +62,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MY-G1-Ems">
-                                            <rect key="frame" x="32" y="19.5" width="42" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MY-G1-Ems">
+                                            <rect key="frame" x="16" y="19.5" width="42" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -90,7 +91,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cX4-Lg-4el" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7MY-G1-Ems" secondAttribute="trailing" constant="20" id="0dc-6y-FkU"/>
-                                        <constraint firstItem="7MY-G1-Ems" firstAttribute="leading" secondItem="ULB-zv-ECC" secondAttribute="leadingMargin" constant="16" id="Q6G-eU-uaD"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7MY-G1-Ems" secondAttribute="bottom" id="3IR-IO-YfE"/>
+                                        <constraint firstItem="7MY-G1-Ems" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ULB-zv-ECC" secondAttribute="top" id="BeE-Cf-yNn"/>
+                                        <constraint firstItem="7MY-G1-Ems" firstAttribute="leading" secondItem="ULB-zv-ECC" secondAttribute="leadingMargin" id="Q6G-eU-uaD"/>
                                         <constraint firstItem="cX4-Lg-4el" firstAttribute="centerY" secondItem="ULB-zv-ECC" secondAttribute="centerY" id="c8O-ld-zAy"/>
                                         <constraint firstItem="7MY-G1-Ems" firstAttribute="centerY" secondItem="ULB-zv-ECC" secondAttribute="centerY" id="j3L-1k-Nvg"/>
                                         <constraint firstAttribute="trailing" secondItem="cX4-Lg-4el" secondAttribute="trailing" constant="16" id="n21-KD-p9F"/>

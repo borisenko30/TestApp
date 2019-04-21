@@ -7,5 +7,6 @@
 //
 
 protocol FeedInteractorOutput: class {
-    func updateFeed()
+    func didFetchArticles()
+    func fetchArticlesDidFail(reason: String)
 }

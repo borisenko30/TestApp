@@ -8,4 +8,5 @@
 
 protocol FeedLocalDataManagerInput: class {
     func saveArticles(_ articles: [PONSOArticle])
+    func clearArticles()
 }
