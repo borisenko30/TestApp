@@ -1,5 +1,5 @@
 //
-//  MasterTableViewCell.swift
+//  FeedTableViewCell.swift
 //  TestApp
 //
 //  Created by Oleksandr on 4/20/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterTableViewCell: UITableViewCell {
+class FeedTableViewCell: UITableViewCell {
 
     // MARK: - Public
     

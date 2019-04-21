@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View-->
+        <!--Article View-->
         <scene sceneID="otD-XM-hlo">
             <objects>
-                <viewController id="e5a-8C-FVa" customClass="DetailView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" id="e5a-8C-FVa" customClass="ArticleView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1AK-Gf-rAQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,24 +36,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nbn-Ed-Nnq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="IZD-ki-Oda"/>
                     <connections>
                         <outlet property="webView" destination="cHG-1G-hnv" id="Cpz-qz-6Rh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgx-wK-teP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11" y="-29"/>
+            <point key="canvasLocation" x="898.55072463768124" y="-29.464285714285712"/>
         </scene>
-        <!--MasterView-->
+        <!--Feed View-->
         <scene sceneID="bF9-M5-Q3y">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="CJh-eI-CZV" customClass="MasterView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FeedViewController" clearsSelectionOnViewWillAppear="NO" id="CJh-eI-CZV" userLabel="Feed View" customClass="FeedView" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cv7-Wo-EmO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MasterTableViewCell" textLabel="7fi-g5-Vv3" style="IBUITableViewCellStyleDefault" id="fPO-n8-alc" customClass="MasterTableViewCell" customModule="TestApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MasterTableViewCell" textLabel="7fi-g5-Vv3" style="IBUITableViewCellStyleDefault" id="fPO-n8-alc" customClass="FeedTableViewCell" customModule="TestApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fPO-n8-alc" id="ULB-zv-ECC">
@@ -76,7 +77,7 @@
                             <outlet property="delegate" destination="CJh-eI-CZV" id="UPt-25-vgO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MasterView" id="bq1-k7-n1k"/>
+                    <navigationItem key="navigationItem" title="Feed" id="bq1-k7-n1k"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TF-fd-4as" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,7 +86,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9dK-k0-rE8">
             <objects>
-                <navigationController id="CZm-Hr-B8v" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" id="CZm-Hr-B8v" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i1B-NX-bJH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -104,12 +105,30 @@
                 <splitViewController id="cfC-dR-s8s" sceneMemberID="viewController">
                     <connections>
                         <segue destination="CZm-Hr-B8v" kind="relationship" relationship="masterViewController" id="G6m-Oq-Wf8"/>
-                        <segue destination="e5a-8C-FVa" kind="relationship" relationship="detailViewController" id="Gf9-QJ-Jfx"/>
+                        <segue destination="2fg-cf-sJa" kind="relationship" relationship="detailViewController" id="Gf9-QJ-Jfx"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hio-4Z-dtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-928" y="-354"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ez8-xg-2Ur">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2fg-cf-sJa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rBN-qD-gDd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e5a-8C-FVa" kind="relationship" relationship="rootViewController" id="DFK-8B-sx2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Mc-hM-RA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11.594202898550726" y="-29.464285714285712"/>
         </scene>
     </scenes>
 </document>

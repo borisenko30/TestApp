@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  ArticleView.swift
 //  TestApp
 //
 //  Created by Oleksandr on 4/20/19.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class DetailView: UIViewController {
+class ArticleView: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {

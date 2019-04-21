@@ -1,5 +1,5 @@
 //
-//  MasterView.swift
+//  FeedView.swift
 //  TestApp
 //
 //  Created by Oleksandr on 4/20/19.
@@ -8,10 +8,13 @@
 
 import UIKit
 
-class MasterView: UITableViewController {
+class FeedView: UITableViewController {
+    var presenter: FeedViewOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter?.viewDidLoad()
     }
 
     // MARK: - Table view data source
@@ -22,7 +25,7 @@ class MasterView: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell", for: indexPath) as! MasterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell", for: indexPath) as! FeedTableViewCell
         cell.fill()
 
         return cell
@@ -39,4 +42,8 @@ class MasterView: UITableViewController {
     }
     */
 
+}
+
+extension FeedView: FeedViewInput {
+    
 }
