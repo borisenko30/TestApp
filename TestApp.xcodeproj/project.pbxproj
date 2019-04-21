@@ -8,22 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		FAD47382226B7FAD002328F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47381226B7FAD002328F1 /* AppDelegate.swift */; };
-		FAD47384226B7FAD002328F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47383226B7FAD002328F1 /* ViewController.swift */; };
 		FAD47387226B7FAD002328F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD47385226B7FAD002328F1 /* Main.storyboard */; };
 		FAD4738A226B7FAD002328F1 /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAD47388226B7FAD002328F1 /* TestApp.xcdatamodeld */; };
 		FAD4738C226B7FAE002328F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD4738B226B7FAE002328F1 /* Assets.xcassets */; };
 		FAD4738F226B7FAE002328F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD4738D226B7FAE002328F1 /* LaunchScreen.storyboard */; };
+		FAD473AB226B866C002328F1 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473AA226B866C002328F1 /* FeedView.swift */; };
+		FAD473AD226B87EA002328F1 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473AC226B87EA002328F1 /* ArticleView.swift */; };
+		FAD473B0226B8921002328F1 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473AF226B8921002328F1 /* FeedTableViewCell.swift */; };
+		FAD473B3226B8B1F002328F1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD473B2226B8B1F002328F1 /* WebKit.framework */; };
+		FAD473B5226B8EF0002328F1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473B4226B8EF0002328F1 /* CoreDataStack.swift */; };
+		FAD473B7226B90C0002328F1 /* PONSOArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473B6226B90C0002328F1 /* PONSOArticle.swift */; };
+		FAD473BA226B9322002328F1 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473B8226B9322002328F1 /* Article+CoreDataClass.swift */; };
+		FAD473BB226B9322002328F1 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473B9226B9322002328F1 /* Article+CoreDataProperties.swift */; };
+		FAD473BD226B9BD4002328F1 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473BC226B9BD4002328F1 /* HTTPService.swift */; };
+		FAD473BF226B9E54002328F1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473BE226B9E54002328F1 /* AppConstants.swift */; };
+		FAD473C1226BA09C002328F1 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473C0226BA09C002328F1 /* FeedInteractor.swift */; };
+		FAD473C8226BB538002328F1 /* FeedLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473C7226BB538002328F1 /* FeedLocalDataManager.swift */; };
+		FAD473CA226BB548002328F1 /* FeedRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473C9226BB548002328F1 /* FeedRemoteDataManager.swift */; };
+		FAD473CC226BB5B4002328F1 /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473CB226BB5B4002328F1 /* FeedRouter.swift */; };
+		FAD473CE226BB6F8002328F1 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473CD226BB6F8002328F1 /* FeedPresenter.swift */; };
+		FAD473D0226BB70A002328F1 /* FeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473CF226BB70A002328F1 /* FeedViewOutput.swift */; };
+		FAD473D2226BB716002328F1 /* FeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473D1226BB715002328F1 /* FeedViewInput.swift */; };
+		FAD473D4226BB724002328F1 /* FeedInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473D3226BB724002328F1 /* FeedInteractorOutput.swift */; };
+		FAD473D6226BB731002328F1 /* FeedInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473D5226BB731002328F1 /* FeedInteractorInput.swift */; };
+		FAD473D8226BB742002328F1 /* FeedRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473D7226BB742002328F1 /* FeedRouterInput.swift */; };
+		FAD473DA226BB74F002328F1 /* FeedRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473D9226BB74F002328F1 /* FeedRouterOutput.swift */; };
+		FAD473DC226BB78A002328F1 /* FeedRemoteDataManagerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473DB226BB78A002328F1 /* FeedRemoteDataManagerOutput.swift */; };
+		FAD473DE226BB798002328F1 /* FeedRemoteDataManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473DD226BB798002328F1 /* FeedRemoteDataManagerInput.swift */; };
+		FAD473E0226BB7A9002328F1 /* FeedLocalDataManagerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473DF226BB7A9002328F1 /* FeedLocalDataManagerInput.swift */; };
+		FAD473E2226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473E1226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift */; };
+		FAD473E4226C71D9002328F1 /* ArticleViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473E3226C71D9002328F1 /* ArticleViewInput.swift */; };
+		FAD473E6226C71E5002328F1 /* ArticleViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473E5226C71E5002328F1 /* ArticleViewOutput.swift */; };
+		FAD473E8226C7245002328F1 /* ArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473E7226C7245002328F1 /* ArticlePresenter.swift */; };
+		FAD473EA226C72F7002328F1 /* ArticleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473E9226C72F7002328F1 /* ArticleInteractor.swift */; };
+		FAD473EC226C7303002328F1 /* ArticleInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473EB226C7303002328F1 /* ArticleInteractorInput.swift */; };
+		FAD473EE226C7311002328F1 /* ArticleInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473ED226C7311002328F1 /* ArticleInteractorOutput.swift */; };
+		FAD473F0226C731D002328F1 /* ArticleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473EF226C731D002328F1 /* ArticleRouter.swift */; };
+		FAD473F2226C732D002328F1 /* ArticleRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD473F1226C732D002328F1 /* ArticleRouterInput.swift */; };
+		FAD47402226CE68E002328F1 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */; };
+		FAD47404226CF72E002328F1 /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAD4737E226B7FAD002328F1 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD47381226B7FAD002328F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAD47383226B7FAD002328F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAD47386226B7FAD002328F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAD47389226B7FAD002328F1 /* TestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestApp.xcdatamodel; sourceTree = "<group>"; };
 		FAD4738B226B7FAE002328F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD4738E226B7FAE002328F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD47390226B7FAE002328F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD473AA226B866C002328F1 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		FAD473AC226B87EA002328F1 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		FAD473AF226B8921002328F1 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		FAD473B2226B8B1F002328F1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FAD473B4226B8EF0002328F1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FAD473B6226B90C0002328F1 /* PONSOArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PONSOArticle.swift; sourceTree = "<group>"; };
+		FAD473B8226B9322002328F1 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAD473B9226B9322002328F1 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAD473BC226B9BD4002328F1 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		FAD473BE226B9E54002328F1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		FAD473C0226BA09C002328F1 /* FeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
+		FAD473C7226BB538002328F1 /* FeedLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalDataManager.swift; sourceTree = "<group>"; };
+		FAD473C9226BB548002328F1 /* FeedRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRemoteDataManager.swift; sourceTree = "<group>"; };
+		FAD473CB226BB5B4002328F1 /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
+		FAD473CD226BB6F8002328F1 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		FAD473CF226BB70A002328F1 /* FeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewOutput.swift; sourceTree = "<group>"; };
+		FAD473D1226BB715002328F1 /* FeedViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewInput.swift; sourceTree = "<group>"; };
+		FAD473D3226BB724002328F1 /* FeedInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractorOutput.swift; sourceTree = "<group>"; };
+		FAD473D5226BB731002328F1 /* FeedInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInteractorInput.swift; sourceTree = "<group>"; };
+		FAD473D7226BB742002328F1 /* FeedRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouterInput.swift; sourceTree = "<group>"; };
+		FAD473D9226BB74F002328F1 /* FeedRouterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouterOutput.swift; sourceTree = "<group>"; };
+		FAD473DB226BB78A002328F1 /* FeedRemoteDataManagerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRemoteDataManagerOutput.swift; sourceTree = "<group>"; };
+		FAD473DD226BB798002328F1 /* FeedRemoteDataManagerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRemoteDataManagerInput.swift; sourceTree = "<group>"; };
+		FAD473DF226BB7A9002328F1 /* FeedLocalDataManagerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalDataManagerInput.swift; sourceTree = "<group>"; };
+		FAD473E1226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalDataManagerOutput.swift; sourceTree = "<group>"; };
+		FAD473E3226C71D9002328F1 /* ArticleViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewInput.swift; sourceTree = "<group>"; };
+		FAD473E5226C71E5002328F1 /* ArticleViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewOutput.swift; sourceTree = "<group>"; };
+		FAD473E7226C7245002328F1 /* ArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePresenter.swift; sourceTree = "<group>"; };
+		FAD473E9226C72F7002328F1 /* ArticleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInteractor.swift; sourceTree = "<group>"; };
+		FAD473EB226C7303002328F1 /* ArticleInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInteractorInput.swift; sourceTree = "<group>"; };
+		FAD473ED226C7311002328F1 /* ArticleInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleInteractorOutput.swift; sourceTree = "<group>"; };
+		FAD473EF226C731D002328F1 /* ArticleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouter.swift; sourceTree = "<group>"; };
+		FAD473F1226C732D002328F1 /* ArticleRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouterInput.swift; sourceTree = "<group>"; };
+		FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD473B3226B8B1F002328F1 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +111,7 @@
 			children = (
 				FAD47380226B7FAD002328F1 /* TestApp */,
 				FAD4737F226B7FAD002328F1 /* Products */,
+				FAD473B1226B8B1F002328F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +126,240 @@
 		FAD47380226B7FAD002328F1 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAD4739E226B83DC002328F1 /* Models */,
+				FAD47398226B832B002328F1 /* Extensions */,
+				FAD47399226B8336002328F1 /* Core Components */,
+				FAD47396226B8303002328F1 /* User Stories */,
 				FAD47381226B7FAD002328F1 /* AppDelegate.swift */,
-				FAD47383226B7FAD002328F1 /* ViewController.swift */,
-				FAD47385226B7FAD002328F1 /* Main.storyboard */,
+				FAD473BE226B9E54002328F1 /* AppConstants.swift */,
 				FAD4738B226B7FAE002328F1 /* Assets.xcassets */,
 				FAD4738D226B7FAE002328F1 /* LaunchScreen.storyboard */,
 				FAD47390226B7FAE002328F1 /* Info.plist */,
 				FAD47388226B7FAD002328F1 /* TestApp.xcdatamodeld */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		FAD47396226B8303002328F1 /* User Stories */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473A1226B8413002328F1 /* Main */,
+			);
+			path = "User Stories";
+			sourceTree = "<group>";
+		};
+		FAD47397226B8326002328F1 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473C2226BB4C0002328F1 /* Services */,
+				FAD473A5226B8605002328F1 /* Router */,
+				FAD473A4226B85FB002328F1 /* Interactor */,
+				FAD473A3226B85F4002328F1 /* Presenter */,
+				FAD473A2226B85EC002328F1 /* View */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		FAD47398226B832B002328F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAD47403226CF72E002328F1 /* UIImage + Extensions.swift */,
+				FAD47401226CE68E002328F1 /* UIViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAD47399226B8336002328F1 /* Core Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAD4739B226B8352002328F1 /* Network Services */,
+				FAD4739A226B834B002328F1 /* Core Data */,
+			);
+			path = "Core Components";
+			sourceTree = "<group>";
+		};
+		FAD4739A226B834B002328F1 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473B4226B8EF0002328F1 /* CoreDataStack.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		FAD4739B226B8352002328F1 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473BC226B9BD4002328F1 /* HTTPService.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		FAD4739C226B8371002328F1 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473A9226B8630002328F1 /* Router */,
+				FAD473A8226B8627002328F1 /* Interactor */,
+				FAD473A7226B8621002328F1 /* Presenter */,
+				FAD473A6226B861C002328F1 /* View */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		FAD4739E226B83DC002328F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473A0226B83F4002328F1 /* PONSO */,
+				FAD4739F226B83EC002328F1 /* Entities */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAD4739F226B83EC002328F1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473B8226B9322002328F1 /* Article+CoreDataClass.swift */,
+				FAD473B9226B9322002328F1 /* Article+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FAD473A0226B83F4002328F1 /* PONSO */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473B6226B90C0002328F1 /* PONSOArticle.swift */,
+			);
+			path = PONSO;
+			sourceTree = "<group>";
+		};
+		FAD473A1226B8413002328F1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FAD47397226B8326002328F1 /* Feed */,
+				FAD4739C226B8371002328F1 /* Article */,
+				FAD47385226B7FAD002328F1 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FAD473A2226B85EC002328F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473AE226B88FE002328F1 /* Cells */,
+				FAD473AA226B866C002328F1 /* FeedView.swift */,
+				FAD473CF226BB70A002328F1 /* FeedViewOutput.swift */,
+				FAD473D1226BB715002328F1 /* FeedViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAD473A3226B85F4002328F1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473CD226BB6F8002328F1 /* FeedPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAD473A4226B85FB002328F1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473C0226BA09C002328F1 /* FeedInteractor.swift */,
+				FAD473D3226BB724002328F1 /* FeedInteractorOutput.swift */,
+				FAD473D5226BB731002328F1 /* FeedInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FAD473A5226B8605002328F1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473CB226BB5B4002328F1 /* FeedRouter.swift */,
+				FAD473D9226BB74F002328F1 /* FeedRouterOutput.swift */,
+				FAD473D7226BB742002328F1 /* FeedRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAD473A6226B861C002328F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473AC226B87EA002328F1 /* ArticleView.swift */,
+				FAD473E3226C71D9002328F1 /* ArticleViewInput.swift */,
+				FAD473E5226C71E5002328F1 /* ArticleViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAD473A7226B8621002328F1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473E7226C7245002328F1 /* ArticlePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAD473A8226B8627002328F1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473E9226C72F7002328F1 /* ArticleInteractor.swift */,
+				FAD473EB226C7303002328F1 /* ArticleInteractorInput.swift */,
+				FAD473ED226C7311002328F1 /* ArticleInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FAD473A9226B8630002328F1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473EF226C731D002328F1 /* ArticleRouter.swift */,
+				FAD473F1226C732D002328F1 /* ArticleRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAD473AE226B88FE002328F1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473AF226B8921002328F1 /* FeedTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAD473B1226B8B1F002328F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473B2226B8B1F002328F1 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAD473C2226BB4C0002328F1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473C4226BB4ED002328F1 /* Local */,
+				FAD473C3226BB4DB002328F1 /* Remote */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAD473C3226BB4DB002328F1 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473C9226BB548002328F1 /* FeedRemoteDataManager.swift */,
+				FAD473DB226BB78A002328F1 /* FeedRemoteDataManagerOutput.swift */,
+				FAD473DD226BB798002328F1 /* FeedRemoteDataManagerInput.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		FAD473C4226BB4ED002328F1 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				FAD473C7226BB538002328F1 /* FeedLocalDataManager.swift */,
+				FAD473E1226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift */,
+				FAD473DF226BB7A9002328F1 /* FeedLocalDataManagerInput.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +433,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD47384226B7FAD002328F1 /* ViewController.swift in Sources */,
+				FAD473DE226BB798002328F1 /* FeedRemoteDataManagerInput.swift in Sources */,
+				FAD473C1226BA09C002328F1 /* FeedInteractor.swift in Sources */,
+				FAD473E6226C71E5002328F1 /* ArticleViewOutput.swift in Sources */,
+				FAD473B0226B8921002328F1 /* FeedTableViewCell.swift in Sources */,
+				FAD473AB226B866C002328F1 /* FeedView.swift in Sources */,
+				FAD473F0226C731D002328F1 /* ArticleRouter.swift in Sources */,
+				FAD473E8226C7245002328F1 /* ArticlePresenter.swift in Sources */,
+				FAD473BB226B9322002328F1 /* Article+CoreDataProperties.swift in Sources */,
+				FAD473BF226B9E54002328F1 /* AppConstants.swift in Sources */,
+				FAD473B7226B90C0002328F1 /* PONSOArticle.swift in Sources */,
+				FAD47402226CE68E002328F1 /* UIViewController + Extensions.swift in Sources */,
+				FAD473CC226BB5B4002328F1 /* FeedRouter.swift in Sources */,
+				FAD473EE226C7311002328F1 /* ArticleInteractorOutput.swift in Sources */,
+				FAD473E2226BB7B9002328F1 /* FeedLocalDataManagerOutput.swift in Sources */,
+				FAD473C8226BB538002328F1 /* FeedLocalDataManager.swift in Sources */,
+				FAD473DC226BB78A002328F1 /* FeedRemoteDataManagerOutput.swift in Sources */,
+				FAD473AD226B87EA002328F1 /* ArticleView.swift in Sources */,
+				FAD473DA226BB74F002328F1 /* FeedRouterOutput.swift in Sources */,
+				FAD473D2226BB716002328F1 /* FeedViewInput.swift in Sources */,
+				FAD473BD226B9BD4002328F1 /* HTTPService.swift in Sources */,
+				FAD473D0226BB70A002328F1 /* FeedViewOutput.swift in Sources */,
+				FAD473CE226BB6F8002328F1 /* FeedPresenter.swift in Sources */,
+				FAD473E0226BB7A9002328F1 /* FeedLocalDataManagerInput.swift in Sources */,
+				FAD473B5226B8EF0002328F1 /* CoreDataStack.swift in Sources */,
+				FAD473D4226BB724002328F1 /* FeedInteractorOutput.swift in Sources */,
+				FAD473F2226C732D002328F1 /* ArticleRouterInput.swift in Sources */,
+				FAD473EC226C7303002328F1 /* ArticleInteractorInput.swift in Sources */,
+				FAD473D6226BB731002328F1 /* FeedInteractorInput.swift in Sources */,
+				FAD473EA226C72F7002328F1 /* ArticleInteractor.swift in Sources */,
+				FAD473D8226BB742002328F1 /* FeedRouterInput.swift in Sources */,
 				FAD4738A226B7FAD002328F1 /* TestApp.xcdatamodeld in Sources */,
+				FAD473E4226C71D9002328F1 /* ArticleViewInput.swift in Sources */,
+				FAD473BA226B9322002328F1 /* Article+CoreDataClass.swift in Sources */,
 				FAD47382226B7FAD002328F1 /* AppDelegate.swift in Sources */,
+				FAD47404226CF72E002328F1 /* UIImage + Extensions.swift in Sources */,
+				FAD473CA226BB548002328F1 /* FeedRemoteDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
